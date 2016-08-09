@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script type="text/javascript">
+        function addOption(className){
+          document.getElementById('physics').style.display = 'none';
+          document.getElementById('chemistry').style.display = 'none';
+          document.getElementById('biology').style.display = 'none';
+          document.getElementById('maths').style.display = 'none';
+          document.getElementById('computer').style.display = 'none';
+          switch (className) {
+            case "8":
+            case "9":
+            case "10":
+                    console.log("8,9,10");
+                    document.getElementById('physics').style.display = 'block';
+                    document.getElementById('chemistry').style.display = 'block';
+                    document.getElementById('biology').style.display = 'block';
+                    document.getElementById('maths').style.display = 'block';
+              return;
+            case "11":
+            case "12":
+                  console.log("11,12");
+                  document.getElementById('maths').style.display = 'block';
+                  document.getElementById('computer').style.display = 'block';
+              return;
+            default:
+
+          }
+        }
+      </script>
+
+    </head>
+    <body>
+      <form method="post" action="/upload/fileUpload">
+            <label>File Name </label></br>
+            <input type="text" name="filename"/></br></br>
+            <label>Class</label></br></br>
+            <input type="radio" name="class" id="8" value="8" onclick="addOption('8');"/>8</br>
+            <input type="radio" name="class" id="9" value="9" onclick="addOption('9');"/>9</br>
+            <input type="radio" name="class" id="10" value="10" onclick="addOption('10');"/>10</br>
+            <input type="radio" name="class" id="11" value="11" onclick="addOption('11');"/>11</br>
+            <input type="radio" name="class" id="12" value="12" onclick="addOption('12');"/>12</br></br>
+
+            <label>Subject</label><br></br>
+            <input type="radio" name="subject" style="display:none;" id="physics" value="physics"/>Physics</br></br>
+            <input type="radio" name="subject" style="display:none;" id="chemistry" value="chemistry"/>Chemistry</br></br>
+            <input type="radio" name="subject" style="display:none;" id="biology" value="biology"/>Biology</br></br>
+            <input type="radio" name="subject" style="display:none;" id="maths" value="maths"/>Maths</br></br>
+            <input type="radio" name="subject" style="display:none;" id="computer" value="computer"/>Computer Science</br></br>
+
+            <input type="file" value="file"/><br>
+            <input type="submit" value="Upload"/></br>
+</form>
+
+    </body>
+
+</html>
